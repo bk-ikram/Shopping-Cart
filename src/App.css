@@ -1,0 +1,33 @@
+body{
+  background-color: var(--background);
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2.5rem;
+  background-color: var(--background);
+}
+
+ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  font-size: 1.1rem;
+}
+
+nav h4{
+  font-weight: bolder;
+}
+
+.styled-button{
+  border-radius: 1.6rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.secondary{
+  background: var(--secondary);
+}
+.primary{
+  background: var(--primary);
+}
