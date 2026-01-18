@@ -1,7 +1,7 @@
 @import './styles/theme.css';
 
 :root {
-  box-sizing: border-box;
+  
  
   font-family: "Alice", serif, system-ui;
   line-height: 1.5;
@@ -16,9 +16,9 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body,#root {
-  min-width: 320px;
   min-height: 100vh; 
   max-width: 1280px;
   min-width: 100vw;
@@ -54,4 +54,10 @@ button{
 
 ul,ol{
   list-style: none;
+}
+
+.icon-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }

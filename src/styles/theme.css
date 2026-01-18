@@ -1,7 +1,9 @@
 /* Default (light theme) */
 :root {
   --text: oklch(17.49% 0.011 80.46);
+  --highlighted-text: oklch(95.91% 0.007 80.72);
   --background: oklch(95.81% 0.010 67.70);
+  --hero-background: hsl(33, 58%, 15%, 5%);
   --primary: oklch(29.54% 0.048 69.08);
   --secondary: oklch(45.42% 0.062 250.12);
   --accent: oklch(61.12% 0.156 50.97);
@@ -10,7 +12,9 @@
 /* Dark theme */
 [data-theme="dark"] {
   --text: oklch(95.91% 0.007 80.72);
+  --highlighted-text: oklch(17.49% 0.011 80.46);
   --background: oklch(17.41% 0.016 66.64);
+  --hero-background: hsl(33, 58%, 85%, 5%);;
   --primary: oklch(90.14% 0.039 72.34);
   --secondary: oklch(71.25% 0.056 247.76);
   --accent: oklch(73.37% 0.159 55.16);

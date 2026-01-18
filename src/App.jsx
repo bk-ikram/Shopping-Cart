@@ -37,13 +37,17 @@ function App() {
           <button onClick={() =>
           setTheme(theme === 'light' ? 'dark' : 'light')
           }>
-            <Icon path={mdiThemeLightDark} size={1} />
+            <div className="icon-container">
+              <Icon path={mdiThemeLightDark} size={1} />
+            </div>
           </button>
         </li>
         <li>Home</li>
         <li>Shop</li>
         <li>
-          <Icon path={mdiCartOutline} size={1} />
+          <div className="icon-container">
+            <Icon path={mdiCartOutline} size={1} />
+          </div>
         </li>
       </ul>
     </nav>
@@ -54,6 +58,8 @@ function App() {
         </h3>
         <p>Your one stop shop to look as elegant and beautiful as you deserve to feel</p>
         <button className={"styled-button primary"}><p>Shop now</p></button>
+      </div>
+      <div className="hero-image">
       </div>
     </main>
     </>
