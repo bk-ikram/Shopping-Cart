@@ -1,0 +1,26 @@
+.main{
+  composes: main from '../Root/Root.css';
+  display: flex;
+  gap: 10rem;
+  flex-grow: 1;
+}
+
+.mainCard{
+  background-color: var(--hero-background);
+  padding: 3rem 5rem;
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: start;
+}
+
+.heroImage{
+  flex: 2 1 auto;
+  background-image: url("../../assets/images/threewomentransparent.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin-top: -6rem;
+  margin-bottom: -6rem;
+}

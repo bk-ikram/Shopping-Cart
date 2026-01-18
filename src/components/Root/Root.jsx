@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+import './Root.css'
 import Icon from '@mdi/react';
 import { mdiCartOutline, mdiThemeLightDark } from '@mdi/js';
+import { NavLink, Outlet } from 'react-router-dom';
+import NavElement from '../NavElement/NavElement.jsx'
+
 
 function getPreviousTheme(){
   return localStorage.getItem('theme')
@@ -15,7 +18,7 @@ function getSystemTheme(){
   : 'light';
 }
 
-function App() {
+function Root() {
   const [theme, setTheme] = useState( () => {
     return getPreviousTheme() ?? getSystemTheme()
   }
@@ -29,9 +32,11 @@ function App() {
   return (
     <>
     <nav>
-      <div className='logo-header'>
-        <h4>Chyne</h4>
-      </div>
+      <NavElement path="/" style={false}>
+        <div className='logo-header'>
+          <h4>Chyne</h4>
+        </div>
+      </NavElement>
       <ul>
         <li>
           <button onClick={() =>
@@ -42,28 +47,28 @@ function App() {
             </div>
           </button>
         </li>
-        <li>Home</li>
-        <li>Shop</li>
         <li>
-          <div className="icon-container">
-            <Icon path={mdiCartOutline} size={1} />
-          </div>
+          <NavElement path="/">
+            Home
+          </NavElement>
+        </li>
+        <li>
+          <NavElement path="shop">
+            Shop
+          </NavElement>
+        </li>
+        <li>
+          <NavElement path="cart" >
+            <div className="icon-container">
+                <Icon path={mdiCartOutline} size={1} />
+            </div>
+          </NavElement>
         </li>
       </ul>
     </nav>
-    <main>
-      <div className="main-card">
-        <h3>
-          Welcome to Chyne!
-        </h3>
-        <p>Your one stop shop to look as elegant and beautiful as you deserve to feel</p>
-        <button className={"styled-button primary"}><p>Shop now</p></button>
-      </div>
-      <div className="hero-image">
-      </div>
-    </main>
+    <Outlet/>
     </>
   )
 }
 
-export default App
+export default Root

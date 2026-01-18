@@ -25,19 +25,6 @@ nav h4{
   font-weight: bolder;
 }
 
-main{
-  display: flex;
-  gap: 10rem;
-  flex-grow: 1;
-}
-
-.main-card{
-  background-color: var(--hero-background);
-  padding: 3rem 5rem;
-  border-radius: 1.6rem;
-  margin: 6rem 0 10rem 6rem;
-}
-
 .styled-button{
   border-radius: 1.6rem;
   padding: 0.5rem 0.8rem;
@@ -51,10 +38,13 @@ main{
   background: var(--primary);
 }
 
-.hero-image{
-  flex: 2 1 auto;
-  background-image: url("./assets/images/threewomentransparent.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top left;
+.main{
+  padding: 6rem 10rem;
+}
+
+nav a:hover,nav button:hover{
+  color: var(--accent);
+}
+nav a.active{
+  color: var(--secondary);
 }

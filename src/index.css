@@ -43,11 +43,14 @@ h5 {font-size: 1.333rem; /* 21.28px */}
 small {font-size: 0.750rem; /* 12px */}
 
 a {
+  all: unset;
   font-weight: 500;
+  cursor: pointer;
 }
 
 button{
   all: unset;
+  cursor: pointer;
   
 }
 
