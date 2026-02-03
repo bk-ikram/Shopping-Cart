@@ -54,6 +54,11 @@ button{
   
 }
 
+input{
+  all: unset;
+  
+}
+
 
 ul,ol{
   list-style: none;

@@ -1,0 +1,52 @@
+.productCard{
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(var(--primary,0.2));
+    display: flex;
+    flex-direction: column;
+}
+.imgContainer{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #a4a4a2;
+    border-radius: 7px 7px 0 0;
+    padding: 0.5rem 1rem;
+}
+
+.productTitle{
+    font-size: 1rem;
+}
+
+.productPrice{
+    font-size: 1rem;
+}
+
+.productImage{
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+}
+
+.details{
+    padding: 2rem;
+}
+
+.quantity{
+    width: 4ch;
+}
+.quantityControl{
+    display:flex;
+    gap: 0;
+}
+.cardActions{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.addToCartBtn{
+    background-color: var(--accent);
+    color: var(--text);
+}

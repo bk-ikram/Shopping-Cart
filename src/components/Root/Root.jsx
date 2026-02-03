@@ -2,12 +2,18 @@ import { useState, useEffect } from 'react'
 import './Root.css'
 import Icon from '@mdi/react';
 import { mdiCartOutline, mdiThemeLightDark } from '@mdi/js';
-import { NavLink, Outlet } from 'react-router-dom';
-import NavElement from '../NavElement/NavElement.jsx'
+import { NavLink, 
+          Outlet
+} from 'react-router-dom';
+import NavElement from '../NavElement/NavElement.jsx';
 
 
 function getPreviousTheme(){
   return localStorage.getItem('theme')
+}
+
+function getPreviousCart(){
+  return localStorage.getItem('cart')
 }
 
 function getSystemTheme(){
@@ -17,12 +23,15 @@ function getSystemTheme(){
   ? 'dark' 
   : 'light';
 }
-
+/*
+function addToCart
+*/
 function Root() {
   const [theme, setTheme] = useState( () => {
     return getPreviousTheme() ?? getSystemTheme()
   }
   )
+  const [cart, setCart] = useState(getPreviousCart());
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
