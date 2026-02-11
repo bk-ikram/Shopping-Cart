@@ -12,10 +12,9 @@ export default function ProductCard({
 }) {
   const { quantityValue, setQuantityValue } = useState(quantity);
   const isInCart = quantity > 0;
-  const quantityClass = [
-    styles.quantityControl,
-    !isInCart && "visibility:hidden;pointer-events:none;",
-  ].join(" ");
+  const quantityClass = [styles.quantityControl, !isInCart && styles.hidden]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className={styles.productCard}>
@@ -29,18 +28,18 @@ export default function ProductCard({
           <div className={quantityClass}>
             <button
               className={styles.decrease}
-              onClick={setQuantityValue((prev) => prev - 1)}
+              onClick={() => setQuantityValue((prev) => prev - 1)}
             >
               -
             </button>
             <input
               className={styles.quantity}
               value={quantityValue}
-              onChange={setQuantityValue(e.target.value)}
+              onChange={() => setQuantityValue(e.target.value)}
             />
             <button
               className={styles.increase}
-              onClick={setQuantityValue((prev) => prev + 1)}
+              onClick={() => setQuantityValue((prev) => prev + 1)}
             >
               +
             </button>
@@ -48,16 +47,18 @@ export default function ProductCard({
           {isInCart ? (
             <button
               className={styles.addToCartBtn}
-              onClick={updateCartQuantity(productId, quantityValue)}
+              onClick={() => updateCartQuantity(productId, quantityValue)}
             >
-              "Update Cart"
+              Update Cart
             </button>
           ) : (
             <button
               className={styles.addToCartBtn}
-              onClick={addToCart({ title, productId, image }, quantityValue)}
+              onClick={() =>
+                addToCart({ title, productId, image }, quantityValue)
+              }
             >
-              "Add To Cart"
+              Add To Cart
             </button>
           )}
         </div>

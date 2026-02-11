@@ -7,7 +7,7 @@ function Cart() {
     <>
       <h1>This is the cart</h1>
       {cart.map((i) => (
-        <h4>JSON.stringify(i, null, 2)</h4>
+        <h4>{JSON.stringify(i, null, 2)}</h4>
       ))}
     </>
   );

@@ -75,3 +75,8 @@
   padding: 0 1rem;
   border-radius: 7px;
 }
+
+.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}

@@ -30,6 +30,7 @@ function Root() {
   const [cart, setCart] = useState(getPreviousCart() ?? []);
 
   function addToCart(product, quantity = 1) {
+    console.log("add to cart clicked");
     setCart((prev) => [...prev, { product, quantity }]);
   }
 
