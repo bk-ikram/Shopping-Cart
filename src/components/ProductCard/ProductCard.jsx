@@ -14,7 +14,7 @@ export default function ProductCard(props) {
       <div className={styles.details}>
         <h2 className={styles.productTitle}>{props.title}</h2>
         <h3 className={styles.productPrice}>${props.price}</h3>
-        <div className={styles.cardActions}>
+        <div className={styles.actions}>
           <div className={styles.quantityControl}>
             <button className={styles.decrease}>-</button>
             <input className={styles.quantity} value={1} />

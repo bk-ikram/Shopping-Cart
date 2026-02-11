@@ -1,52 +1,77 @@
-.productCard{
-    border-radius: 7px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: rgba(var(--primary,0.2));
-    display: flex;
-    flex-direction: column;
+.productCard {
+  border-radius: 7px;
+  /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
+  box-shadow: var(--text) 0px 3px 8px;
+  background-color: rgba(var(--primary, 0.2));
+  display: flex;
+  flex-direction: column;
 }
-.imgContainer{
-    height: 200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #a4a4a2;
-    border-radius: 7px 7px 0 0;
-    padding: 0.5rem 1rem;
-}
-
-.productTitle{
-    font-size: 1rem;
+.imgContainer {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #a4a4a2;
+  border-radius: 7px 7px 0 0;
+  padding: 0.5rem 1rem;
 }
 
-.productPrice{
-    font-size: 1rem;
+.productTitle {
+  font-size: 1rem;
 }
 
-.productImage{
-    height: 100%;
-    width: 100%;
-    object-fit: scale-down;
+.productPrice {
+  font-size: 1rem;
 }
 
-.details{
-    padding: 2rem;
+.productImage {
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
 }
 
-.quantity{
-    width: 4ch;
+.details {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
-.quantityControl{
-    display:flex;
-    gap: 0;
-}
-.cardActions{
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
 }
 
-.addToCartBtn{
-    background-color: var(--accent);
-    color: var(--text);
+.quantityControl {
+  display: flex;
+  gap: 0;
+}
+.quantity {
+  width: 3ch;
+  text-align: center;
+  border: solid var(--text) 1px;
+}
+
+.decrease {
+  border-radius: 7px 0 0 7px;
+}
+.increase {
+  border-radius: 0 7px 7px 0;
+}
+
+.decrease,
+.increase {
+  background-color: var(--text);
+  color: var(--highlighted-text);
+  width: 0.5rem;
+  padding: 0.5rem;
+}
+
+.addToCartBtn {
+  background-color: var(--accent);
+  color: var(--text);
+  font-size: 0.9rem;
+  padding: 0 1rem;
+  border-radius: 7px;
 }
