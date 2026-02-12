@@ -29,6 +29,8 @@ function Root() {
   });
   const [cart, setCart] = useState(getPreviousCart() ?? []);
 
+  const numItems = cart.length;
+
   function addToCart(product, quantity = 1) {
     console.log("add to cart clicked");
     setCart((prev) => [...prev, { product, quantity }]);
@@ -36,12 +38,14 @@ function Root() {
 
   function updateCartQuantity(productId, quantity) {
     setCart((prev) =>
-      prev.map((p) => (p.productId === productId ? { ...p, quantity } : p))
+      prev.map((p) =>
+        p.product.productId === productId ? { ...p, quantity } : p
+      )
     );
   }
 
   function removeFromCart(productId) {
-    setCart((prev) => prev.filter((p) => p.productId !== productId));
+    setCart((prev) => prev.filter((p) => p.product.productId !== productId));
   }
 
   useEffect(() => {
@@ -77,6 +81,7 @@ function Root() {
             <NavElement path="cart">
               <div className="icon-container">
                 <Icon path={mdiCartOutline} size={1} />
+                {numItems > 0 && <div className="cartItems">{numItems}</div>}
               </div>
             </NavElement>
           </li>

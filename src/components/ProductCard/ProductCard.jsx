@@ -9,8 +9,8 @@ export default function ProductCard({
   quantity,
   addToCart,
   updateCartQuantity,
+  removeFromCart,
 }) {
-  const { quantityValue, setQuantityValue } = useState(quantity);
   const isInCart = quantity > 0;
   const quantityClass = [styles.quantityControl, !isInCart && styles.hidden]
     .filter(Boolean)
@@ -28,18 +28,20 @@ export default function ProductCard({
           <div className={quantityClass}>
             <button
               className={styles.decrease}
-              onClick={() => setQuantityValue((prev) => prev - 1)}
+              onClick={() => updateCartQuantity(productId, quantity - 1)}
             >
               -
             </button>
             <input
               className={styles.quantity}
-              value={quantityValue}
-              onChange={() => setQuantityValue(e.target.value)}
+              value={quantity}
+              onChange={(e) =>
+                updateCartQuantity(productId, Number(e.target.value))
+              }
             />
             <button
               className={styles.increase}
-              onClick={() => setQuantityValue((prev) => prev + 1)}
+              onClick={() => updateCartQuantity(productId, quantity + 1)}
             >
               +
             </button>
@@ -47,16 +49,14 @@ export default function ProductCard({
           {isInCart ? (
             <button
               className={styles.addToCartBtn}
-              onClick={() => updateCartQuantity(productId, quantityValue)}
+              onClick={() => removeFromCart(productId)}
             >
-              Update Cart
+              Remove
             </button>
           ) : (
             <button
               className={styles.addToCartBtn}
-              onClick={() =>
-                addToCart({ title, productId, image }, quantityValue)
-              }
+              onClick={() => addToCart({ title, productId, image, price }, 1)}
             >
               Add To Cart
             </button>

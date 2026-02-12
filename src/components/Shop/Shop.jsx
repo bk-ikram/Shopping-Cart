@@ -12,14 +12,15 @@ export async function loader({ request }) {
 
 export default function Shop() {
   const { products, q } = useLoaderData();
-  const { cart, addToCart, updateCartQuantity } = useOutletContext();
+  const { cart, addToCart, updateCartQuantity, removeFromCart } =
+    useOutletContext();
 
   return (
     <main className={styles.shop}>
       <h1>Our Products</h1>
       <div className={styles.shopGrid}>
         {products.map((p) => {
-          const cartItem = cart.find((i) => i.productId === p.id);
+          const cartItem = cart.find((i) => i.product.productId === p.id);
           const quantity = cartItem?.quantity ?? 0;
           return (
             <ProductCard

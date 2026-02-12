@@ -1,50 +1,68 @@
-#root{
+#root {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
 }
 
-body{
+body {
   background-color: var(--background);
 }
 
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 2.5rem;
   background-color: var(--background);
 }
 
-ul{
+ul {
   display: flex;
   justify-content: space-between;
   gap: 2.5rem;
   font-size: 1.1rem;
 }
 
-nav h4{
+nav h4 {
   font-weight: bolder;
 }
 
-.styled-button{
+.styled-button {
   border-radius: 1.6rem;
   padding: 0.5rem 0.8rem;
   color: var(--highlighted-text);
 }
 
-.secondary{
+.secondary {
   background: var(--secondary);
 }
-.primary{
+.primary {
   background: var(--primary);
 }
 
-.main{
+.main {
   padding: 6rem 10rem;
 }
 
-nav a:hover,nav button:hover{
+nav a:hover,
+nav button:hover {
   color: var(--accent);
 }
-nav a.active{
+nav a.active {
   color: var(--secondary);
+}
+
+.iconContainer {
+  position: relative;
+}
+
+.cartItems {
+  font-size: 0.8rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  color: var(--text);
+  background-color: var(--accent);
+  position: absolute;
+  padding: 0 0.5rem;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 2;
 }
